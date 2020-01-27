@@ -7,3 +7,5 @@ It then goes through and retrieves the content (headline, timestamp and text) of
 As there are over 500,000 articles on the ABC, the script does take time to execute.
 
 It uses BeautifulSoup to parse HTML, and python-docx to create the word file.
+
+Please read [this](https://github.com/ShoryuDZ/ABCScraper/blob/master/DetailedInstructions.txt) for comprehensive instructions.
