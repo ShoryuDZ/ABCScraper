@@ -1,0 +1,60 @@
+Welcome to Shoryu Das-Zaman's ABCScraper
+
+This tool allows users to store and save large numbers of articles from the ABC Archives. The only inputs it requires is a starting date (mm/yyyy), and a finishing year (yyyy). The scraper will grab every article between the first day of the starting month and the end of December of the year specified.
+
+1. To begin, you will need to install a package manager through Terminal (macOS):
+
+> /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+Press [RETURN] when it prompts you. It may ask for your login's password, enter the password but note that no characters will appear on screen. Press [RETURN] after you enter your password, and let the package manager (HomeBrew) download. It may take a few minutes.
+
+2. Once HomeBrew has been downloaded, you'll need to use it to install Python:
+
+> brew install python3
+
+3. Please ensure you install Python3, as that is what the scraper is written in. This may take up to a minute. Once it is completed, you'll need a few extensions to allow for web scraping and saving the data:
+
+> pip3 install beautifulsoup4
+...
+> pip3 install packages
+...
+> pip3 install docx
+...
+> pip3 install urllib
+
+If any of these fail, they're most likely pre-installed by HomeBrew. I don't use HomeBrew so I'm unsure of what it preinstalls with Python3 and I'm not bothered to check but urllib is normally included no matter how you install python (I've included it just in case).
+
+4. Once all the extensions are complete, you're ready to begin scraping! Run the python3 script:
+
+> python3 ~/[insert file path]
+
+If you downloaded this and unpacked in the Downloads folder:
+
+> python3 ~/Downloads/ABCScraper/scraper.py
+
+HINT: The top of this document window will show you the directory path, you'll just need to replace DetailedInstructions.txt with scraper.py.
+
+5. The script will prompt you for dates:
+
+> Enter starting date (mm/yyyy): 01/2009
+> Enter ending year (yyyy): 2009
+
+For the above example, the scraper will collect articles from 1/1/2009 to 31/12/2009.
+
+Once the scraper begins, it will show each day that it collects, and store the results monthly in a word document in the directory where scraper.py exists:
+
+>1/1/2009
+>2/1/2009
+.
+.
+.
+>31/1/2009
+[At this point, a new word document is created and all articles, as well as those headlines without content, are saved here]
+>1/2/2009
+.
+.
+.
+
+NOTE: All articles will be saved in Word documents sorted by month. This is in the case that the scraper is denied access to the ABC Archive. In this case, you will see the date not progressing, even after an hour. Press [Control][C] to break the scraper at any time and restart from step 4, changing the starting date in step 5 to the one after the last word document saved (i.e. If the scraper breaks in October 2009, the last save will be of 09/2009. Restart the scraper at 10/2009).
+
+Best of luck, email shoryudz@gmail.com for assistance.
